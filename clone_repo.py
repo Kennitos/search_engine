@@ -14,13 +14,9 @@ from bs4 import BeautifulSoup
 from git import Repo # add 'git' module through anaconda navigator + pip install gitpython
 
 
-
-
 ### VARIABLES
 url = "https://github.com/jupyter/jupyter/wiki/A-gallery-of-interesting-Jupyter-Notebooks"
 new_folder = "repos"
-
-
 
 
 ### FUNCTIONS
@@ -140,8 +136,6 @@ def start_cloning(max_size):
         print(),start_cloning(max_size)
 
 
-
-
 ### WEBSCRAPING JUPYTER GALLERY (CREATE LIST OF GITHUB REPOS URL'S)
 r  = requests.get(url)
 data = r.text
@@ -203,19 +197,3 @@ if not os.path.exists(new_folder): # create folder in which to put all the repos
 #  'https://github.com/lgiordani/blog_source']
 
 start_cloning(int(len(github_repositories)))
-
-
-
-
-
-  
-# start_cloning(int(len(github_repositories)))
-
-# print('Cloning github repositories...')
-# # clone_repositories(github_repositories,error_list,new_folder)
-
-# start_cloning()
-
-# if max_size != None:
-#     clone_repositories(list(github_repositories)[:max_size],error_list,new_folder)
-# print("Scraped",len(github_repositories),"github repositories, containing",count_ipynb(new_folder),".ipynb files")
